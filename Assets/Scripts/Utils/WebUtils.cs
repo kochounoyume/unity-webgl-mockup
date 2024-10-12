@@ -15,6 +15,6 @@ namespace WebGLMockup
         private static extern void MovePageURL(string pageName);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void MovePage(in string pageName) => MovePageURL(pageName);
+        public static void MovePage(string pageName) => MovePageURL(pageName);
     }
 }
