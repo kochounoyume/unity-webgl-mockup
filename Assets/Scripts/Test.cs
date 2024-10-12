@@ -7,21 +7,19 @@ namespace WebGLMockup
     {
         private IEnumerator Start()
         {
+            Debug.Log("Start");
             var wait = new WaitForSeconds(5);
 
             yield return wait;
-            WebUtils.MovePageURL("test");
+            WebUtils.MovePage("test");
 
             yield return wait;
-            WebUtils.MovePageURL("test2");
+            WebUtils.MovePage("test2");
 
             yield return wait;
-            WebUtils.MovePageURL("");
+            WebUtils.MovePage("");
 
             yield return wait;
-            WebUtils.ConsoleLog(Application.absoluteURL);
-            WebUtils.ConsoleWarn(Application.absoluteURL);
-            WebUtils.ConsoleError(Application.absoluteURL);
         }
     }
 }

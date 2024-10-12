@@ -3,6 +3,7 @@
 #endif
 
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace WebGLMockup
@@ -11,18 +12,9 @@ namespace WebGLMockup
     {
         [Conditional("ENABLE_JSLIB")]
         [DllImport("__Internal")]
-        public static extern void ConsoleLog(string message);
+        private static extern void MovePageURL(string pageName);
 
-        [Conditional("ENABLE_JSLIB")]
-        [DllImport("__Internal")]
-        public static extern void ConsoleWarn(string message);
-
-        [Conditional("ENABLE_JSLIB")]
-        [DllImport("__Internal")]
-        public static extern void ConsoleError(string message);
-
-        [Conditional("ENABLE_JSLIB")]
-        [DllImport("__Internal")]
-        public static extern void MovePageURL(string pageName);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void MovePage(in string pageName) => MovePageURL(pageName);
     }
 }
