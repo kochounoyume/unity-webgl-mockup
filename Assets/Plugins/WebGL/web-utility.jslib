@@ -12,8 +12,9 @@ mergeInto(LibraryManager.library, {
         console.error(UTF8ToString(message));
     },
 
-    MovePageURL(pageName) {
-        window.history.pushState({}, '', window.location.origin + '/' + UTF8ToString(pageName));
+    MovePageURL: function (pageName) {
+        // window.history.pushState({}, '', window.location.origin + '/' + UTF8ToString(pageName));
+        window.history.pushState({}, '', UTF8ToString(pageName));
     },
 
 });
