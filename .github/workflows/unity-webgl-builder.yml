@@ -73,6 +73,7 @@ jobs:
       - uses: actions/upload-pages-artifact@v3.0.1
         with:
           path: build/WebGL/WebGL
+          retention-days: 2
 
   deploy:
     name: Deploy to GitHub Pages
