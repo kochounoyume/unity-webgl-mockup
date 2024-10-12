@@ -1,26 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hoge Page</title>
-</head>
-<body>
-    <h1>Hoge Page</h1>
-    <p>このページは一時的に表示されますが、直後に / ページが読み込まれます。</p>
-
-    <script>
-        // URLを変えずに https://hoge.com のコンテンツを取得
-        fetch('/')
-          .then(response => response.text())  // HTMLデータを取得
-          .then(html => {
-            // 取得したHTMLを現在のページに挿入
-            document.documentElement.innerHTML = html;
-
-            // URLを変更せずに履歴に /hoge を追加
-            // window.history.pushState({}, '', '/hoge');
-          })
-          .catch(err => console.log('Error loading page:', err));
-    </script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hoge Page</title>
+    </head>
+    <body>
+        <h1>Hello World</h1>
+    </body>
 </html>
