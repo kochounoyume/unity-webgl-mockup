@@ -1,8 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
-using WebGLMockup;
 
-namespace DefaultNamespace
+namespace WebGLMockup
 {
     public class Test : MonoBehaviour
     {
