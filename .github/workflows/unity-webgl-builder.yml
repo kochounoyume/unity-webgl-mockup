@@ -69,6 +69,12 @@ jobs:
           targetPlatform: WebGL
           unityVersion: 2022.3.22f1
 
+      # Copy
+      - name: Copy index
+        run: | 
+          mkdir -p build/WebGL/WebGL/hoge
+          cp build/WebGL/WebGL/index.html build/WebGL/WebGL/hoge/index.html
+
       # Upload Artifact
       - uses: actions/upload-pages-artifact@v3.0.1
         with:
