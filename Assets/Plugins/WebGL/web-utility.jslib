@@ -14,6 +14,6 @@ mergeInto(LibraryManager.library, {
 
     MovePageURL(pageName) {
         window.history.pushState({}, '', window.location.origin + '/' + UTF8ToString(pageName));
-    }
+    },
 
 });
