@@ -7,7 +7,7 @@ namespace WebGLMockup
     {
         private IEnumerator Start()
         {
-            Debug.Log("Start");
+            Debug.Log("Start" + Application.absoluteURL);
             var wait = new WaitForSeconds(5);
 
             yield return wait;
