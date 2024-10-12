@@ -18,7 +18,7 @@
             document.documentElement.innerHTML = html;
 
             // URLを変更せずに履歴に /hoge を追加
-            window.history.pushState({}, '', '/hoge');
+            // window.history.pushState({}, '', '/hoge');
           })
           .catch(err => console.log('Error loading page:', err));
     </script>
