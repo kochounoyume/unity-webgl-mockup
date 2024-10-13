@@ -58,7 +58,6 @@ jobs:
             Library-
 
       # Unityプロジェクトのビルド
-      # 設定しない場合、buildフォルダに出力される
       - name: Run the WebGL build
         uses: game-ci/unity-builder@v4.3.0
         env:
@@ -68,16 +67,17 @@ jobs:
         with:
           targetPlatform: WebGL
           unityVersion: 2022.3.22f1
+          buildsPath: builds
 
       # Copy
       - name: Copy index
         run: | 
-          sudo cp build/WebGL/WebGL/index.html build/WebGL/WebGL/hoge.html
+          sudo cp builds/WebGL/WebGL/index.html builds/WebGL/WebGL/hoge.html
 
       # Upload Artifact
       - uses: actions/upload-pages-artifact@v3.0.1
         with:
-          path: build/WebGL/WebGL
+          path: builds/WebGL/WebGL
           retention-days: 2
 
   deploy:
