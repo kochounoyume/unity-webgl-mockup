@@ -72,8 +72,7 @@ jobs:
       # Copy
       - name: Copy index
         run: | 
-          chmod -R 777 build/WebGL/WebGL
-          cp build/WebGL/WebGL/index.html build/WebGL/WebGL/hoge.html
+          sudo cp build/WebGL/WebGL/index.html build/WebGL/WebGL/hoge.html
 
       # Upload Artifact
       - uses: actions/upload-pages-artifact@v3.0.1
