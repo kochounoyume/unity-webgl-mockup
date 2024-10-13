@@ -66,7 +66,7 @@ jobs:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
           targetPlatform: WebGL
-          unityVersion: 2022.3.22f1
+          unityVersion: auto
           buildsPath: builds
 
       # Copy
