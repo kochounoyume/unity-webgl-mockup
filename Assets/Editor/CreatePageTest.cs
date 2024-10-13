@@ -5,7 +5,7 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-namespace Editor
+namespace CreatePage
 {
     public class CreatePageTest
     {
@@ -40,5 +40,11 @@ namespace Editor
 
             Assert.Pass();
         });
+
+        [Test]
+        public void Hoge()
+        {
+            Assert.Pass();
+        }
     }
 }

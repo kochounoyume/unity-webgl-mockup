@@ -71,8 +71,23 @@ jobs:
 
       # Copy
       - name: Copy index
-        run: | 
-          sudo cp builds/WebGL/WebGL/index.html builds/WebGL/WebGL/hoge.html
+        uses: game-ci/unity-test-runner@v4.3.1
+        env:
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          unityVersion: auto
+          testMode: editmode
+          customParameters: -testFilter "CreatePage.CreatePageTest.CreatePage"
+
+      # Upload Artifact with Test Results
+      - uses: actions/upload-artifact@v4.4.3
+        if: always()
+        with:
+          name: Test results
+          path: artifacts
 
       # Upload Artifact
       - uses: actions/upload-pages-artifact@v3.0.1
