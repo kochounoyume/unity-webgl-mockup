@@ -69,6 +69,13 @@ jobs:
           unityVersion: auto
           buildsPath: builds
 
+      # Free up disk Space
+      - name: Free disk space
+        run:  |
+          chmod +x ./.github/workflows/scripts/free_disk_space.sh
+          .github/workflows/scripts/free_disk_space.sh
+          git checkout -- ./.github/workflows/scripts/free_disk_space.sh
+
       # Copy
       - name: Copy index
         uses: game-ci/unity-test-runner@v4.3.1
